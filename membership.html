@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Pavan..About our GYM</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-image: url('images/bg.jpg');
+    }
+  </style>
+  <script>
+    function validate() {
+      if (document.myform.name.value == "") {
+        alert("Please enter your firstname!");
+        document.myform.name.focus();
+        return false;
+      }
+      if (document.myform.pavan.value == "-1") {
+        alert("Please provide your country!");
+        
+        return false;
+      }
+      return (true);
+
+    }
+  </script>
+</head>
+
+<body>
+  <header class="header">
+    <!-- Left box for logo -->
+    <div class="left">
+      <img src="images/logo.jpg" alt="LOGO">
+      <div>Gymnasium</div>
+    </div>
+    <!-- Mid box for navbar -->
+    <div class="mid">
+      <ul class="navbar">
+        <li><a href="index.html"> Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Facilities.html">Facilities</li>
+        <li><a href="membership.html" class="active">Membership</a></li>
+        <li><a href="registration.html">Registration</a></li>
+      </ul>
+    </div>
+    <!-- Right box for buttons -->
+    <div class="right">
+      <a href="login.html" class="btn btn-link" role="button ">LOG-IN</a>
+      <a href="email.html" class="btn btn-link" role="button ">E-mail Us</a>
+    </div>
+  </header>
+  <div class="container-fluid" style="background-color:rgb(233, 222, 222)">
+    <div class="row">
+      <div class="col-sm-12 ">
+        <img src="images/jumbo1.jpg" width="100%" height="350" alt="not found">
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid" style="background-color:rgb(0, 0, 0)">
+    <div class="row">
+      <div class="col-sm-6 ">
+        <img src="images/mem1.jpg">
+      </div>
+      <div class="col-sm-6 ">
+        <center>
+          <p style="font-size: 20px; font-family:'Times New Roman', Times, serif;">Does your gym or fitness center see
+            an increase in memberships at the beginning of each year? How about after a huge promotion?
+
+            New membership opportunities for gyms, fitness centers, and health clubs are abundant. Whether it’s the
+            start of the year or the end of a membership promotion, it’s time to start thinking about your membership
+            cards.
+
+            Is your membership card program working for your facility? The membership cards you offer are a part of the
+            overall experience. People expect an easy-to-use card that they can use regularly without concern. When it
+            causes frustration, it can decrease the member’s overall satisfaction with your business. Membership cards
+            should be a reputation improvement, not a detraction.</p>
+        </center>
+        <p style="font-size: 20px; font-family:'Times New Roman', Times, serif;">
+          Occasionally, we get asked if CARDSource offers RFID chip cards. We do have RFID capabilities, though many
+          times, barcode, magnetic stripe, and variable data cards are quicker to produce at a lower price—which helps
+          you keep overhead costs down. Plus, there are many custom shapes and sizes available. In addition, PVC
+          lamination is imageable, which allows these durable cards to be easily imprinted with custom information.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid" style="background-color:rgb(255, 255, 255)">
+    <div>
+      <center>
+        <h1
+          style="color: rgb(0, 0, 0); font-size: 40px; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+          MEMBERSHIP DISCOUNT%</h1>
+      </center>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 ">
+        <img src="images/mem2.jpg" alt="gym1">
+        <h2 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif"> Advance Booking 20%
+          Membership apply in 1month before.</h2>
+      </div>
+      <div class="col-sm-4 ">
+        <img src="images/mem3.jpg" alt="gym1">
+        <h2 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> Advance Booking 50%
+          Membership apply in 15days before.</h2>
+      </div>
+      <div class="col-sm-4 ">
+        <img src="images/mem4.jpg" alt="gym1">
+        <h2 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"> Advance Booking 80%
+          Membership apply in 5days before.</h2>
+      </div>
+    </div>
+  </div>
+  <div style="background-color: black;">
+    <div class="container-fluid">
+      <center>
+        <h1> MEMBERSHIP REGISTRATION</h1>
+      </center>
+      <div class="row">
+        <div class="col-sm-3">
+          <h2>Founder of GYM..</h2>
+          <div class="card" style="width:300px; height: 550px;">
+            <img class="card-img-top" src="images/me.jpg" alt="Card image" style="width:100%; height: 400px;">
+            <div class="card-body">
+              <h4 class="card-title" style="color: black;">Pavan Shah</h4>
+              <p class="card-text" style="color: black;"> Owner OF Company Our Gym..</p>
+              <a href="registration.html" class="btn btn-primary">Contact With Me</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <form action="#" name="myform" onsubmit="return(validate());" id="use" target="_blank">
+
+            <div class="form-group" style="background-color: black;">
+              <label for="usr">Name:</label>
+              <input type="text" name="name" class="form-control" id="usr">
+            </div>
+            <div class="form-group">
+              <label for="sel1">Select Discount:</label>
+              <select class="form-control" name="pavan" id="sel1">
+                <option value = "-1" selected>[choose yours]</option>
+                <option value = "0"> 20% Membership DISCOUNT</option>
+                <option value = "1">50% Membership DISCOUNT</option>
+                <option value = "2">80% Membership DISCOUNT</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="comment">Comment:</label>
+              <textarea class="form-control" rows="5" id="comment"
+                placeholder=" Any Doubt Regards Comment on Membership"></textarea>
+            </div>
+            <button style="width: 80px;" type="reset" class="btn btn-primary">Reset</button>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+
+        <div class="col-sm-3">
+          <img style="width:100%;" src="images/mem5.jpg">
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <footer>
+    <div class="container-fluid" style="background-color:rgb(0, 0, 0)">
+      <div class="row">
+        <div class="col-sm-2 ">
+
+          <img style="height: 80px;" src="images/gymG7.jpg" alt="gym1">
+        </div>
+        <div class="col-sm-2 ">
+          <img style="height: 80px;" src="images/gymG8.jpg" alt="gym1">
+        </div>
+        <div class="col-sm-2">
+          <img style="height: 80px;" src="images/gymG9.jpg" alt="gym1">
+        </div>
+        <div class="col-sm-2">
+          <img style="height: 80px;" src="images/gymG10.jpg" alt="gym1">
+        </div>
+        <div class="col-sm-2 ">
+          <img style="height: 80px;" src="images/gymG6.jpg" alt="gym1">
+        </div>
+        <div class="col-sm-2 ">
+          <img style="height: 80px;" src="images/gymG7.jpg" alt="gym1">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <img style="height: 80px;" src="images/gymG10.jpg" alt="gym1">
+        </div>
+        <div class="col-sm-2 ">
+          <img style="height: 80px;" src="images/gymG6.jpg" alt="gym1">
+        </div>
+        <div class="col-sm-2 ">
+          <img style="height: 80px;" src="images/gymG7.jpg" alt="gym1">
+        </div>
+        <div class="col-sm-2">
+          <img style="height: 80px;" src="images/gymG1.jpg" alt="gym1">
+        </div>
+        <div class="col-sm-2 ">
+          <img style="height: 80px;" src="images/gymG2.jpg" alt="gym1">
+        </div>
+        <div class="col-sm-2 ">
+          <img style="height: 80px;" src="images/gymG3.jpg" alt="gym1">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <img style="height: 80px;" src="images/gymG1.jpg" alt="gym1">
+        </div>
+        <div class="col-sm-2 ">
+          <img style="height: 80px;" src="images/gymG2.jpg" alt="gym1">
+        </div>
+        <div class="col-sm-2 ">
+          <img style="height: 80px;" src="images/gymG3.jpg" alt="gym1">
+        </div>
+        <div class="col-sm-2 ">
+
+          <img style="height: 80px;" src="images/gymG7.jpg" alt="gym1">
+        </div>
+        <div class="col-sm-2 ">
+          <img style="height: 80px;" src="images/gymG8.jpg" alt="gym1">
+        </div>
+        <div class="col-sm-2">
+          <img style="height: 80px;" src="images/gymG9.jpg" alt="gym1">
+        </div>
+      </div>
+      <br>
+      <center>
+        <a href="https://www.facebook.com" class="fa fa-facebook"></a>
+        <a href="https://twitter.com" class="fa fa-twitter"></a>
+        <a href="https://www.google.co.in" class="fa fa-google"></a>
+        <a href="https://in.linkedin.com" class="fa fa-linkedin"></a>
+        <a href="http://in.youtube.com/" class="fa fa-youtube"></a>
+      </center>
+      <div class="text-center p-5"
+        style="background-color: rgb(0, 0, 0); font-family: 'Times New Roman', Times, serif; font-size: 25px;">
+        © 2022 Copyright Pavan Shah:
+        <a class="text-white " href="https://shahpavan.unaux.com/">shahpavan.unaux.com</a>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

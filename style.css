@@ -1,0 +1,168 @@
+* {
+    margin-top: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Baloo Bhai', cursive;
+    color: white;
+    margin-top: 0px;
+    padding: 0px;
+    /* background: url('bg.jpg');*/
+}
+
+.header {
+    background-image: url('bg.jpg');
+    padding: 1px 1px;
+    height: 120px;
+    /*padding-bottom: 1px; */
+    width: 100%;
+
+}
+
+.left {
+    display: inline-block;
+    /* border: 2px solid red; */
+    position: absolute;
+    left: 60px;
+    top: 20px;
+}
+
+.left img {
+    width: 136px;
+    filter: invert(100%);
+}
+
+.left div {
+    line-height: 19px;
+    font-size: 26px;
+    text-align: center;
+}
+
+.mid {
+    display: block;
+    width: 60%;
+    margin: 40px auto
+        /* border: 2px solid green; */
+}
+
+.right {
+    position: absolute;
+    right: 34px;
+    top: 43px;
+    display: inline-block;
+    /* border: 2px solid yellow; */
+}
+
+.navbar {
+    display: flex;
+
+}
+
+.navbar li {
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    padding: 7px 18px;
+
+
+}
+
+.navbar li a:hover,
+.navbar li a.active {
+    text-decoration: underline;
+    color: rgb(255, 0, 0);
+
+}
+
+.btn {
+    font-family: 'Baloo Bhai', cursive;
+    margin: 10px 5px;
+    background-color: white;
+    color: red;
+    padding: 1px 7px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgb(31, 30, 30);
+}
+
+.container {
+    border: 2px solid white;
+    margin: 106px 80px;
+    padding: 75px;
+    width: 60%;
+    border-radius: 28px;
+}
+
+.form-group input {
+    font-family: 'Baloo Bhai', cursive;
+    text-align: center;
+    display: block;
+    width: 508px;
+    padding: 1px;
+    border: 2px solid black;
+    margin: 11px auto;
+    font-size: 25px;
+    border-radius: 8px;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.container button {
+    display: block;
+    width: 74%;
+    margin: 20px auto;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 20px;
+    width: 15px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 9px;
+    border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-google {
+    background: #dd4b39;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}

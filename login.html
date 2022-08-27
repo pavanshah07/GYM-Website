@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Validations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        .container,
+        .form-box {
+            display: block;
+            width: 100%;
+        }
+
+        body {
+            background: #1a9ae2;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .form-box {
+            max-width: 350px;
+            margin: 100px auto;
+            border-radius: 10px;
+            min-height: 200px;
+            padding: 30px;
+            background: #fff;
+        }
+
+        .form-box .input-field {
+
+            margin-bottom: 20px;
+            position: relative;
+
+        }
+
+        .form-box input {
+            display: block;
+            min-height: 20px;
+            font-size: 18px;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .form-box input[type='text'] {
+            padding-right: 25px
+        }
+
+        .form-box h2 {
+            display: block;
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 40px;
+        }
+
+        .form-box label {
+            font-size: 20px;
+            color: #000000;
+            margin-bottom: 5px;
+            display: block;
+
+        }
+
+        .form-box input[type='submit'] {
+            background: #1a9ae2;
+            cursor: pointer;
+            color: #fff;
+
+        }
+
+        .form-box .fa {
+            position: absolute;
+            right: 10px;
+            margin-top: -30px;
+        }
+
+        .form-box .input-field.error input {
+            border-color: #f00;
+            border-width: 2px;
+        }
+
+        .form-box .input-field.error .fa {
+            color: #f00;
+        }
+
+        .form-box .input-field.success input {
+            border-color: #0b0;
+            border-width: 2px;
+        }
+
+        .form-box .input-field.success .fa {
+            color: #0b0;
+        }
+
+        .input-field span {
+            display: none;
+        }
+
+        .input-field.error span {
+            color: #f00;
+            display: block
+        }
+
+        .input-field.success span {
+            color: #0b0;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="form-box">
+            <h2>Create Your Account</h2>
+            <form action="/action_page.php">
+                <div class="input-field">
+                    <label for="">Username</label>
+                    <input type="text" id="username" placeholder="username">
+                    <i class="fa " aria-hidden="true"></i>
+                    <span></span>
+                </div>
+
+                <div class="input-field">
+                    <label for="">Email</label>
+                    <input type="text" id="email" placeholder="email address">
+
+                    <i class="fa " aria-hidden="true"></i>
+                    <span></span>
+                </div>
+
+                <div class="input-field">
+                    <label for="">Password</label>
+                    <input type="text" id="pass1" placeholder="password">
+                    <i class="fa " aria-hidden="true"></i>
+                    <span></span>
+                </div>
+
+                <div class="input-field">
+                    <label for="">Confirm Password</label>
+                    <input type="text" id="pass2" placeholder="confirm password">
+                    <i class="fa " aria-hidden="true"></i>
+                    <span></span>
+                </div>
+                <div>
+                    <input type="submit" id="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    </div>
+    <script>
+
+        document.getElementById("submit").addEventListener("click", function (event) {
+            event.preventDefault();
+
+            checkData();
+        });
+
+        var username = document.getElementById("username");
+        var email = document.getElementById("email");
+        var pass1 = document.getElementById("pass1");
+        var pass2 = document.getElementById("pass2");
+
+       function checkData() {
+            var usernameValue = username.value.trim();
+            var emailValue = email.value.trim();
+            var pass1Value = pass1.value.trim();
+            var pass2Value = pass2.value.trim();
+
+            if (usernameValue == "") {
+                setError(username, "Username can't be blank");
+            } else {
+                setSuccess(username);
+            }
+
+            if (emailValue == "") {
+                setError(email, "Email can't be blank");
+            }
+            else if (!isEmail(emailValue)) {
+                setError(email, "Email is not Valid");
+            }
+            else {
+                setSuccess(email);
+            }
+
+
+            if (pass1Value == "") {
+                setError(pass1, "Password can't be blank");
+            } else {
+                setSuccess(pass1);
+            }
+
+
+            if (pass2Value == "") {
+                setError(pass2, "Password can't be blank");
+            }
+            else if (pass1Value !== pass2Value) {
+                setError(pass2, "Password does not match");
+            }
+            else {
+                setSuccess(pass2);
+            }
+
+
+        }
+
+
+        function setError(u, msg) {
+            var parentBox = u.parentElement;
+            parentBox.className = "input-field error";
+            var span = parentBox.querySelector("span");
+            var fa = parentBox.querySelector(".fa");
+            span.innerText = msg;
+            fa.className = "fa fa-exclamation-circle";
+        }
+
+        function setSuccess(u) {
+            var parentBox = u.parentElement;
+            parentBox.className = "input-field success";
+            var fa = parentBox.querySelector(".fa");
+            fa.className = "fa fa-check-circle";
+        }
+
+        function isEmail(e) {
+            var reg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return reg.test(e);
+        }
+    </script>
+
+</body>
+
+</html>
