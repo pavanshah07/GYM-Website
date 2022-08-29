@@ -229,7 +229,7 @@
 
         <div class="form-box">
             <h2>Create Your Account</h2>
-            <form action="/action_page.php">
+            <form action="#" name="myform" onsubmit="return(validate());" id="use" target="_blank">
                 <div class="input-field">
                     <label for="">Username</label>
                     <input type="text" id="username" placeholder="username">
@@ -259,7 +259,7 @@
                     <span></span>
                 </div>
                 <div>
-                    <input type="submit" id="submit" value="Submit">
+                    <input type="submit" id="submit" value="Submit" onclick="validateprice()">
                 </div>
             </form>
         </div>
