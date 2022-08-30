@@ -18,21 +18,24 @@
         body {
             background-image: url('images/bg.jpg');
         }
-        #use{
+
+        #use {
             font-size: 25px;
-        
+
         }
-        .form-control{
-            border-color:aqua;
+
+        .form-control {
+            border-color: aqua;
         }
-        td{
+
+        td {
             font-family: 'Times New Roman', Times, serif;
-            
+
         }
-        h1{
+
+        h1 {
             font-family: 'Times New Roman', Times, serif;
         }
-        
     </style>
     <script>
         function validate() {
@@ -41,9 +44,28 @@
                 document.myform.firstname.focus();
                 return false;
             }
-            if (document.myform.age.value<18) {
+            if (document.myform.age.value < 18) {
                 alert("Please enter your 18+ Above Age !");
                 document.myform.age.focus();
+                return false;
+            }
+            if (document.myform.email.value == "") {
+                alert("Please provide your Email!");
+                document.myform.email.focus();
+                return false;
+            } else {
+                var emailID = document.myform.email.value;
+                atpos = emailID.indexOf("@");
+                dotpos = emailID.lastIndexOf(".");
+                if (atpos < 1 || (dotpos - atpos < 2)) {
+                    alert("Please enter correct email ID")
+                    document.myform.email.focus();
+                    return false;
+                }
+            }
+            if (document.myform.num.value == "") {
+                alert("Please provide your number");
+                document.myform.num.focus();
                 return false;
             }
             if (document.myform.num.value.length > 10 || document.myform.num.value.length <= 9) {
@@ -51,20 +73,6 @@
                 document.myform.num.focus();
                 return false;
             }
-            if( document.myform.email.value == "" ) {
-				alert( "Please provide your Email!" );
-				document.myform.email.focus() ;
-				return false;
-			}else{
-				var emailID = document.myform.email.value;
-				atpos = emailID.indexOf("@");
-				dotpos = emailID.lastIndexOf(".");
-				if (atpos < 1 || ( dotpos - atpos < 2 )) {
-					alert("Please enter correct email ID")
-					document.myform.email.focus() ;
-					return false;
-				}
-			}
             return (true);
         }
     </script>
@@ -100,7 +108,7 @@
                 <table class="table-border">
                     <div class="form-group">
                         <tr>
-                           <td><b>First name :</b></td>
+                            <td><b>First name :</b></td>
                             <td><input type="text" class="form-control" name="firstname"></td>
                         </tr>
                     </div>
@@ -113,8 +121,8 @@
                     <div class="form-group">
                         <tr>
                             <td><b>Gender :</b></td>
-                            <td> <input type="radio" name="gender" value="male" > Male</td>
-                            <td><input type="radio" name="gender" value="female" >Female</td>
+                            <td> <input type="radio" name="gender" value="male"> Male</td>
+                            <td><input type="radio" name="gender" value="female">Female</td>
                         </tr>
                     </div>
                     <div class="form-group">
@@ -124,22 +132,22 @@
                     <div class="form-group">
                         <tr>
                             <td><b>E-Mail ID:</b></td>
-                            <td><input type="text" name="email" class="form-control" ></td>
+                            <td><input type="text" name="email" class="form-control"></td>
                         </tr>
                     </div>
                     <div class="form-group">
                         <tr>
                             <td><b>Phone NO.:</b></td>
-                            <td> <input type="number" class="form-control" name="num" ></td>
+                            <td> <input type="number" class="form-control" name="num"></td>
                         </tr>
                     </div>
                     <div class="form-group">
                         <tr>
                             <td> <input type="submit" class="btn" onclick="validateprice()"></td>
-                                <center>
-                                  <td>  <button type="reset" class="btn" style="width: 100px;"> Reset </button></td>
-                                </center>
-                            
+                            <center>
+                                <td> <button type="reset" class="btn" style="width: 100px;"> Reset </button></td>
+                            </center>
+
                         </tr>
                     </div>
                 </table>
