@@ -3,347 +3,107 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Form Validations</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="style.css">
     <style>
-        html,
-        body,
-        div,
-        span,
-        applet,
-        object,
-        iframe,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        blockquote,
-        pre,
-        a,
-        abbr,
-        acronym,
-        address,
-        big,
-        cite,
-        code,
-        del,
-        dfn,
-        em,
-        img,
-        ins,
-        kbd,
-        q,
-        s,
-        samp,
-        small,
-        strike,
-        strong,
-        sub,
-        sup,
-        tt,
-        var,
-        b,
-        u,
-        i,
-        center,
-        dl,
-        dt,
-        dd,
-        ol,
-        ul,
-        li,
-        fieldset,
-        form,
-        label,
-        legend,
-        table,
-        caption,
-        tbody,
-        tfoot,
-        thead,
-        tr,
-        th,
-        td,
-        article,
-        aside,
-        canvas,
-        details,
-        embed,
-        figure,
-        figcaption,
-        footer,
-        header,
-        hgroup,
-        menu,
-        nav,
-        output,
-        ruby,
-        section,
-        summary,
-        time,
-        mark,
-        audio,
-        video {
-            margin: 0;
-            padding: 0;
-
+        .header {
+            background-image: url('images/bg.jpg');
         }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        /* HTML5 display-role reset for older browsers */
-        article,
-        aside,
-        details,
-        figcaption,
-        figure,
-        footer,
-        header,
-        hgroup,
-        menu,
-        nav,
-        section {
-            display: block;
-        }
-
-        .container,
-        .form-box {
-            display: block;
-            width: 100%;
-        }
-
-        body {
-            background: #1a9ae2;
-            font-family: 'Lato', sans-serif;
-        }
-
-        .form-box {
-            max-width: 350px;
-            margin: 100px auto;
-            border-radius: 10px;
-            min-height: 200px;
-            padding: 30px;
-            background: #fff;
-        }
-
-        .form-box .input-field {
-
-            margin-bottom: 20px;
-            position: relative;
-
-        }
-
-        .form-box input {
-            display: block;
-            min-height: 20px;
-            font-size: 18px;
-            padding: 10px;
-            width: 100%;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-
-        .form-box input[type='text'] {
-            padding-right: 25px
-        }
-
-        .form-box h2 {
-            display: block;
-            text-align: center;
-            font-size: 28px;
-            margin-bottom: 40px;
-        }
-
-        .form-box label {
-            font-size: 20px;
-            color: #000000;
-            margin-bottom: 5px;
-            display: block;
-
-        }
-
-        .form-box input[type='submit'] {
-            background: #1a9ae2;
-            cursor: pointer;
-            color: #fff;
-
-        }
-
-        .form-box .fa {
-            position: absolute;
-            right: 10px;
-            margin-top: -30px;
-        }
-
-        .form-box .input-field.error input {
-            border-color: #f00;
-            border-width: 2px;
-        }
-
-        .form-box .input-field.error .fa {
-            color: #f00;
-        }
-
-        .form-box .input-field.success input {
-            border-color: #0b0;
-            border-width: 2px;
-        }
-
-        .form-box .input-field.success .fa {
-            color: #0b0;
-        }
-
-        .input-field span {
-            display: none;
-        }
-
-        .input-field.error span {
-            color: #f00;
-            display: block
-        }
-
-        .input-field.success span {
-            color: #0b0;
+        .pvn {
+            border-radius: 8px;
         }
     </style>
-
-
-
-</head>
-
-<body>
-
-    <div class="container">
-
-        <div class="form-box">
-            <h2>Create Your Account</h2>
-            <form action="#" name="myform" onsubmit="return(validate());" id="use" target="_blank">
-                <div class="input-field">
-                    <label for="">Username</label>
-                    <input type="text" id="username" placeholder="username">
-                    <i class="fa " aria-hidden="true"></i>
-                    <span></span>
-                </div>
-
-                <div class="input-field">
-                    <label for="">Email</label>
-                    <input type="text" id="email" placeholder="email address">
-
-                    <i class="fa " aria-hidden="true"></i>
-                    <span></span>
-                </div>
-
-                <div class="input-field">
-                    <label for="">Password</label>
-                    <input type="text" id="pass1" placeholder="password">
-                    <i class="fa " aria-hidden="true"></i>
-                    <span></span>
-                </div>
-
-                <div class="input-field">
-                    <label for="">Confirm Password</label>
-                    <input type="text" id="pass2" placeholder="confirm password">
-                    <i class="fa " aria-hidden="true"></i>
-                    <span></span>
-                </div>
-                <div>
-                    <input type="submit" id="submit" value="Submit" onclick="validateprice()">
-                </div>
-            </form>
-        </div>
-    </div>
-
-    </div>
     <script>
-
-        document.getElementById("submit").addEventListener("click", function (event) {
-            event.preventDefault();
-
-            checkData();
-        });
-
-        var username = document.getElementById("username");
-        var email = document.getElementById("email");
-        var pass1 = document.getElementById("pass1");
-        var pass2 = document.getElementById("pass2");
-
-       function checkData() {
-            var usernameValue = username.value.trim();
-            var emailValue = email.value.trim();
-            var pass1Value = pass1.value.trim();
-            var pass2Value = pass2.value.trim();
-
-            if (usernameValue == "") {
-                setError(username, "Username can't be blank");
-            } else {
-                setSuccess(username);
-            }
-
-            if (emailValue == "") {
-                setError(email, "Email can't be blank");
-            }
-            else if (!isEmail(emailValue)) {
-                setError(email, "Email is not Valid");
+        function validate() {
+            if (document.myForm.EMail.value == "") {
+                alert("Please provide your Email!");
+                document.myForm.EMail.focus();
+                return false;
             }
             else {
-                setSuccess(email);
+                var emailID = document.myForm.EMail.value;
+                atpos = emailID.indexOf("@");
+                dotpos = emailID.lastIndexOf(".");
+                if (atpos < 1 || (dotpos - atpos < 2)) {
+                    alert("Please enter correct email ID")
+                    document.myForm.EMail.focus();
+                    return false;
+                }
             }
-
-
-            if (pass1Value == "") {
-                setError(pass1, "Password can't be blank");
-            } else {
-                setSuccess(pass1);
+            if (document.myForm.pwd.value == "") {
+                alert("Please provide your password!");
+                document.myForm.pwd.focus();
+                return false;
             }
-
-
-            if (pass2Value == "") {
-                setError(pass2, "Password can't be blank");
+            if (document.myForm.pwd.value.length < 6) {
+                alert("Please Password should be above !");
+                document.myForm.pwd.focus();
+                return false;
             }
-            else if (pass1Value !== pass2Value) {
-                setError(pass2, "Password does not match");
-            }
-            else {
-                setSuccess(pass2);
-            }
-
-
-        }
-
-
-        function setError(u, msg) {
-            var parentBox = u.parentElement;
-            parentBox.className = "input-field error";
-            var span = parentBox.querySelector("span");
-            var fa = parentBox.querySelector(".fa");
-            span.innerText = msg;
-            fa.className = "fa fa-exclamation-circle";
-        }
-
-        function setSuccess(u) {
-            var parentBox = u.parentElement;
-            parentBox.className = "input-field success";
-            var fa = parentBox.querySelector(".fa");
-            fa.className = "fa fa-check-circle";
-        }
-
-        function isEmail(e) {
-            var reg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-            return reg.test(e);
+            return true;
         }
     </script>
+</head>
+
+<body style="background-color: black;">
+    <header class="header">
+        <!-- Left box for logo -->
+        <div class="left">
+            <img src="images/logo.jpg" alt="LOGO">
+            <div>Gymnasium</div>
+        </div>
+        <!-- Mid box for navbar -->
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="index.html"> Home</a></li>
+                <li><a href="about.html">About </a></li>
+                <li><a href="Facilities.html">Facilities </a></li>
+                <li><a href="membership.html">Membership </a></li>
+                <li><a href="registration.html">Registration</a></li>
+            </ul>
+        </div>
+        <!-- Right box for buttons -->
+        <div class="right">
+            <a href="login.html" class="btn btn-link active" role="button ">LOG-IN</a>
+            <a href="signup.html" class="btn btn-link" role="button ">Sign Up</a>
+        </div>
+    </header>
+    <center>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="images/contact-logo1.jpg" class="rounded-circle" alt="img not found" width="100%"
+                        height="250px">
+                </div>
+                <div class="col-sm-6">
+                    <form action="#" name="myForm" onsubmit="return(validate());" id="use" target="_blank">
+                        <label style="font-family:'Times New Roman', Times, serif; font-size: 25px;">Email</label></br>
+                        <input type="text" name="EMail" class="pvn"> </br>
+                        <label
+                            style="font-family:'Times New Roman', Times, serif; font-size: 25px;">Password</label></br>
+                        <input type="text" name="pwd" class="pvn"><br>
+                        <button type="reset" class="btn" style="width: 80px;"> Reset </button>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </center>
+    <div class="text-center"
+        style="color: rgb(255, 255, 255); font-family: 'Times New Roman', Times, serif; font-size: 25px;">
+        © 2022 Copyright Pavan Shah:
+        <a class="text-white " href="https://shahpavan.unaux.com/">shahpavan.unaux.com</a>
+    </div>
 
 </body>
 
